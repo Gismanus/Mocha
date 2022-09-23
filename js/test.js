@@ -4,12 +4,20 @@
 
 describe('pow', function () {
 
-    it('2 to the power of 3 is 8', function () {
-        assert.equal(pow(2, 3), 8);
+    describe('raises x to the power of 3', function () {
+
+        function makeTest(x) {
+            let expected = x * x * x;
+            it(`${x} to the power of 3 is ${expected}`, function () {
+                assert.equal(pow(x, 3), expected);
+            });
+        }
+
+        for (let x = 1; x <= 5; x++) {
+            makeTest(x);
+        }
+
     });
 
-    it('3 to the power of 3 is 27', function(){
-        assert.equal(pow(3, 3), 27);
-    });
-
+    // ... other tests.
 });
