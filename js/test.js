@@ -19,5 +19,11 @@ describe('pow', function () {
 
     });
 
+    it('for negative n returns NaN', function(){
+        assert.isNaN(pow(2, -1));
+    });
+    it('for fractional n returns NaN', function(){
+        assert.isNaN(pow(2, 1.5));
+    });
     // ... other tests.
 });
